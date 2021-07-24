@@ -1,0 +1,8 @@
+{:lein         {:profile "+shadow-cljs"}
+ :builds       {:app {:target     :browser
+                      :output-dir "resources/public/js"
+                      :asset-path "/js"
+                      :modules    {:app {:entries [reagent-challenge.core]}}
+                      :devtools   {:after-load reagent-challenge.core/mount-root}}}
+ :dev-http     {3000 {:root    "resources/public"
+                      :handler reagent-challenge.handler/app}}}
